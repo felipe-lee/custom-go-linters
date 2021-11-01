@@ -1,0 +1,6 @@
+- id: ato-go-linter
+  name: ato-go-linter
+  description: Lint go files for ATO annotations
+  entry: go run ./cmd/ato-linter/main.go
+  language: golang
+  files: \.go$
