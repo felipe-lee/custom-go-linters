@@ -1,0 +1,26 @@
+# direnv
+.envrc.local
+
+# Ignore all compiled binary directories found anywhere in the project
+bin/
+
+# misc
+.DS_Store
+.idea
+.vscode
+*.swp
+*.sublime-*
+
+# nix
+.nix-hash
+.nix-disable
+.gopath
+
+# fresh-brew
+# The first two files are meant to be updated in the trussworks/fresh-brew repo
+# The lock files can be helpful to troubleshoot homebrew issues. They will
+# represent the last known good state.
+Brewfile
+pour.sh
+Brewfile.local.lock.json
+Brewfile.lock.json

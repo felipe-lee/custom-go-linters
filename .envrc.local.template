@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+export GOLANGCI_LINT_CONCURRENCY=8
