@@ -4,6 +4,9 @@
 # Ignore all compiled binary directories found anywhere in the project
 bin/
 
+# version check files
+*.stamp
+
 # misc
 .DS_Store
 .idea
