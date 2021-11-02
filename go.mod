@@ -1,8 +1,8 @@
 module github.com/felipe-lee/custom-go-linters
 
-go 1.17
+go 1.15
 
-require golang.org/x/tools v0.1.7
+require golang.org/x/tools v0.1.5
 
 require (
 	golang.org/x/mod v0.4.2 // indirect

@@ -15,19 +15,18 @@ in buildEnv {
 
     (import (builtins.fetchGit {
       # Descriptive name to make the store path easier to identify
-      name = "go-1.17.2";
+      name = "go-1.15.15";
       url = "https://github.com/NixOS/nixpkgs/";
-      # Using master branch since 1.17.2 hasn't made it to nixpkgs-unstable yet
       ref = "refs/heads/master";
-      rev = "db3aa421df73f43c03ad266619e22ce7c5354d92";
-    }) {}).go_1_17
+      rev = "9a0676dc4866128463c4cd83a20ad10384d6824f";
+    }) {}).go
 
     (import (builtins.fetchGit {
       # Descriptive name to make the store path easier to identify
-      name = "pre-commit-2.14.0";
+      name = "pre-commit-2.15.0";
       url = "https://github.com/NixOS/nixpkgs/";
-      ref = "refs/heads/nixpkgs-unstable";
-      rev = "229ff549e611d33d6b8ef2c6a2ce8879e9e75545";
+      ref = "refs/heads/master";
+      rev = "d73f18c222d3a21e536448cbecd33bba8142b2c1";
     }) {}).pre-commit
 
   ];
