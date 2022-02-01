@@ -1,0 +1,64 @@
+linters-settings:
+  govet:
+    check-shadowing: true
+  goimports:
+    # put imports beginning with prefix after 3rd-party packages;
+    # it's a comma-separated list of prefixes
+    local-prefixes: github.com/transcom/mymove
+  gomodguard:
+    blocked:
+      modules:
+        - github.com/gobuffalo/uuid:
+            recommendations:
+              - github.com/gofrs/uuid
+            reason: "uuid from GoBuffalo is deprecated in favor of the gofrs uuid package. See https://github.com/gobuffalo/uuid"
+        - github.com/gobuffalo/validate:
+            recommendations:
+              - github.com/gobuffalo/validate/v3
+            reason: "MilMove is now on Pop v5, do not use older versions of this module"
+        - github.com/gobuffalo/pop:
+            recommendations:
+              - github.com/gobuffalo/pop/v5
+            reason: "MilMove is now on Pop v5, do not use older versions of this module"
+        - github.com/gobuffalo/pop/soda:
+            recommendations:
+              - github.com/gobuffalo/pop/v5/soda
+            reason: "MilMove is now on Pop v5, do not use older versions of this module"
+        - github.com/facebookgo/clock:
+            recommendations:
+              - github.com/benbjohnson/clock
+            reason: "facebookgo/clock is archived and inactive, recommend using original fork repo"
+  custom:
+    locallinters:
+      path: plugin/custom_go_linters.so
+      description: Run our custom go linters
+      original-url: github.com/transcom/mymove/plugin
+linters:
+  enable:
+    - deadcode
+    - gofmt
+    - goimports
+    - golint
+    - gosec
+    - govet
+    - ineffassign
+    - structcheck
+    - typecheck
+    - varcheck
+    - gomodguard
+    - errcheck
+    - staticcheck
+  fast: false
+issues:
+  fix: true
+run:
+  # timeout for analysis, e.g. 30s, 5m, default is 1m
+  deadline: 8m
+  concurrency: 1
+  issues-exit-code: 1
+  tests: true
+  skip-dirs:
+    - pkg/assets
+    - pkg/gen
+    - mocks
+  skip-dirs-use-default: true

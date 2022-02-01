@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+set -eu -o pipefail
+
+#hook="$1"; shift
+
+#go run ./cmd/"$hook"/main.go -- ./...
+go run ./cmd/ato/main.go -- ./...
